@@ -1,11 +1,9 @@
 package supercraftPackage;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.shape.Box;
+import javafx.scene.SceneAntialiasing;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -15,7 +13,7 @@ public class Main extends Application {
         primaryStage.setTitle("Supercraft");
 
         Group group = new Group();
-        Scene scene = new Scene(group, 1280, 720);
+        Scene scene = new Scene(group, 1280, 720, true, SceneAntialiasing.BALANCED);
         initGame(group, scene);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -24,7 +22,7 @@ public class Main extends Application {
     public void initGame(Group group, Scene scene) {
         Block block = new Block(500, 500, 500);
 
-        Player player = new Player(true);
+        Player player = new Player(true, scene);
         player.setTranslateZ(-1000);
         player.setNearClip(0.1);
         player.setFarClip(2000.0);
