@@ -1,2 +1,2 @@
 # Supercraft
-A Minecraft-like game written entirely in JavaFX!
+An extremely lightweight Minecraft-like game written entirely in JavaFX!
