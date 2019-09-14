@@ -1,9 +1,12 @@
 package supercraftPackage;
 
 import javafx.application.Application;
+import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.SceneAntialiasing;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.PhongMaterial;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -21,15 +24,19 @@ public class Main extends Application {
 
     public void initGame(Group group, Scene scene) {
         Block block = new Block(500, 500, 500);
-
+        block.setMaterial(new PhongMaterial(Color.RED));
+        Block plane = new Block(3000, 50, 3000);
+        plane.setLayoutY(500);
         Player player = new Player(true, scene);
         player.setTranslateZ(-1000);
         player.setNearClip(0.1);
-        player.setFarClip(2000.0);
-        player.setFieldOfView(100);
+        player.setFarClip(20000.0); // View distance.
+        player.setFieldOfView(60);
         player.setTranslateX(500);
         player.setTranslateY(300);
-        group.getChildren().addAll(block, player);
+        //player.setRotationAxis(new Point3D(1, 0, 0));
+        //player.setRotate(-25); // Rotates on the x axis (up/down).
+        group.getChildren().addAll(block, plane, player);
         scene.setCamera(player);
     }
 
