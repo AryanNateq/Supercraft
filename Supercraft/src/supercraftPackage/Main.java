@@ -27,13 +27,15 @@ public class Main extends Application {
         block.setMaterial(new PhongMaterial(Color.RED));
         Block plane = new Block(3000, 50, 3000);
         plane.setLayoutY(500);
+
         Player player = new Player(true, scene);
         player.setTranslateZ(-1000);
-        player.setNearClip(0.1);
-        player.setFarClip(20000.0); // View distance.
-        player.setFieldOfView(60);
         player.setTranslateX(500);
         player.setTranslateY(300);
+        player.setNearClip(0.1);
+        player.setFarClip(100000); // View distance.
+        player.setFieldOfView(42);
+        player.setVerticalFieldOfView(true);
         //player.setRotationAxis(new Point3D(1, 0, 0));
         //player.setRotate(-25); // Rotates on the x axis (up/down).
         group.getChildren().addAll(block, plane, player);

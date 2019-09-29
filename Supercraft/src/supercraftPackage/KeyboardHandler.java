@@ -6,7 +6,7 @@ import javafx.scene.input.KeyEvent;
 
 public class KeyboardHandler  implements EventHandler<KeyEvent> {
     private PerspectiveCamera camera;
-    private final double MOVEMENT_RATE = 10;
+    private final double MOVEMENT_RATE = 20;
 
     public KeyboardHandler(PerspectiveCamera camera) {
         this.camera = camera;
